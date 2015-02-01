@@ -1,5 +1,5 @@
 /**
- * Having chess board ofN size and input cell a and output cell byou have to find
+ * Having chess board of size N and input cell a and output cell b you have to find
  * the shortes way with the knight from a to b. 
  *
  * Implementation:
