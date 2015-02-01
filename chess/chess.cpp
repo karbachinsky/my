@@ -1,3 +1,15 @@
+/**
+ * Having chess board ofN size and input cell a and output cell byou have to find
+ * the shortes way with the knight from a to b. 
+ *
+ * Implementation:
+ * 1. Constructing graph with posible knigt ways.
+ * 2. Implementing BFS.
+ *
+ * Author: I. Karbachinsky <igorkarbachinsky@mail.ru> 02.2015
+ */
+
+
 #include <iostream>
 #include <vector>
 #include <memory>
