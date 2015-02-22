@@ -17,7 +17,7 @@ int main() {
     DEBUG_ITERABLE("Starting array", a.begin(), a.end());
 
     for (size_t i=0; i<a.size(); ++i) { 
-        auto it = algo::kth_ordered_statistic<std::vector<int>::iterator, int>(a.begin(), a.end(), i); 
+        auto it = algo::KthOrderedStatistic<std::vector<int>::iterator, int>(a.begin(), a.end(), i); 
         std::cout << i <<"-th ordered statistic: " << *it << std::endl;
     }
 }
