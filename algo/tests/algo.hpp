@@ -2,6 +2,10 @@
 #include "kth_order_statistic.hpp"
 #include "gtest/gtest.h"
 
+//#undef NDEBUG
+//#include "debug.hpp"
+#include <iostream>
+
 namespace {
  
 typedef std::vector<int> Numbers;
@@ -11,13 +15,13 @@ typedef std::vector<float> FloatNumbers;
 template<class T, class I>
 void CheckData(T &data, T &expected) {
     for (size_t i=0; i<data.size(); ++i) { 
-        //T data_copy = data;
-        auto jt = algo::KthOrderStatistic<typename T::iterator, I>(data.begin(), data.end(), i); 
-        
+        T data_copy = data;
+        DEBUG_ITERABLE("data", data_copy.begin(), data_copy.end());
+        auto jt = algo::KthOrderStatistic<typename T::iterator, I>(data_copy.begin(), data_copy.end(), i); 
+
         EXPECT_EQ(*jt, expected[i]);
     }
 }
-
 
 TEST(KOrderedStatistic, BasicBehavior) {
     Numbers data = {4,5,3,6,7,8,9,2,1,0};
@@ -25,7 +29,6 @@ TEST(KOrderedStatistic, BasicBehavior) {
 
     CheckData<Numbers, int>(data, expected_statistics);
 }
-
 
 TEST(KOrderedStatistic, DuplicateNumbers) {
     Numbers data = {16,18,10,16,12};

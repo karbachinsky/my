@@ -46,15 +46,18 @@ const InputIterator KthOrderStatistic(const InputIterator begin, const InputIter
             DEBUG("Swap jt", *jt);
 
             iter_swap(it, jt);
-            it++; jt--;
+
+            DEBUG_ITERABLE("Array after rearranging", begin, end);
+
+            if (*it == *jt && jt - it == 1)
+                break;
         }
     } while (it < jt);
 
-    pivot = it;
+    pivot = jt;
 
     size_t pivot_n = std::distance(begin, pivot);
 
-    DEBUG_ITERABLE("Array after rearranging", begin, end);
     DEBUG("Pivot position after rearranging", pivot_n);
 
     if (pivot_n == k) {

@@ -5,3 +5,4 @@ Testing/
 CMakeCache.txt
 CTest*
 *.swp
+*.swo

@@ -1,4 +1,4 @@
-#define CDEBUG
+#define NDEBUG
 
 #include "algo.hpp"
 #include "gtest/gtest.h"
